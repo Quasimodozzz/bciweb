@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实验开始</title>
+    <link rel="stylesheet" type="text/css" href="../css/startlab_CSS.css">
+    <script src="../js/jquery-3.6.0.js"></script>
+</head>
+<body>
+<script src="../js/startlab_js.js"></script>
+    <div class="home" id="home">
+        <img class="background" src="../img/首页背景2.jfif" width="100%" alt="ERROR">
+        <img class="background2" src="../img/实验背景.jfif" alt="ERROR">
+
+
+        <div class="subheading">
+            <div class="subheading_icon">
+                <img src="../img/标题框1.png" width="100%" alt="ERROR">
+                <button class="lab_fanshi"  onclick="lab_fanshi()">实验范式</button>
+            </div>
+            <div class="subheading_icon">
+                <img src="../img/标题框1.png" width="100%" alt="ERROR">
+                <button class="lab_xinhao" onclick="lab_xinhao()">信号采集</button>
+            </div>
+            <div class="subheading_icon">
+                <img src="../img/标题框1.png" width="100%" alt="ERROR">
+                <button class="lab_yuchuli" onclick="lab_yuchuli()">预处理</button>
+            </div>
+            <div class="subheading_icon">
+                <img src="../img/标题框1.png" width="100%" alt="ERROR">
+                <button class="lab_tezheng" onclick="lab_tezheng()">特征提取</button>
+            </div>
+            <div class="subheading_icon">
+                <img src="../img/标题框1.png" width="100%" alt="ERROR">
+                <button class="lab_fenlei" onclick="lab_fenlei()">特征分类</button>
+            </div>
+            <div class="subheading_icon">
+                <img src="../img/标题框1.png" width="100%" alt="ERROR">
+                <button class="lab_result" onclick="lab_result()">实验结果</button>
+            </div>
+            <div class="subheading_icon">
+                <img src="../img/标题框1.png" width="100%" alt="ERROR">
+                <button class="lab_report" onclick="lab_report()">实验报告</button>
+            </div>
+
+        </div>
+
+        <div class="content" id="content">
+            <div class="content_title">
+                <h1 id="content_title_result"></h1>
+            </div>
+            <div class="content_detail">
+                <div class="content_lab_fanshi" id="content_lab_fanshi">
+                    <span class="left">
+                        <video id="lab_fanshi_video" controls>
+                            <source src="signaldata/实验范式.mp4" type="video/mp4">
+                        </video>
+                    </span>
+                    <span class="right">
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;向用户展示了一个6乘6的字符矩阵。用户的任务是将注意力集中在研究人员指定的单词中的字符上（即，一次一个字符）。该矩阵的所有行和列都以5.7Hz的频率连续随机变亮。行或列的12个点亮中有两个包含所需的字符（即一个特定行和一个特定列）。这些不常见刺激（即，12个刺激中有2个确实包含所需字符）诱发的反应与不包含所需字符的刺激诱发的反应不同。
+                        </p>
+                        <img src="../img/实验范式.png" alt="ERROR">
+                    </span>
+                </div>
+
+                <div class="content_lab_xinhao" id="content_lab_xinhao">
+<!--                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“P300”采集了64个通道，图示为其中8个通道的信号。</p>-->
+<!--                    <img src="../img/信号采集.png" alt="ERROR">-->
+                    <iframe src="1.html"></iframe>
+                </div>
+
+                <div class="content_lab_yuchuli" id="content_lab_yuchuli">
+                    <span class="lab_yuchuli_left">
+                        <p>原始信号</p>
+                        <img src="../img/原始信号.png" alt="ERROR">
+                    </span>
+
+                    <span class="lab_yuchuli_right">
+                        <p>处理后信号</p>
+                        <img id="lab_yuchuli_img_1" src="../img/原始信号+伪迹去除.png" alt="ERROR">
+                        <img id="lab_yuchuli_img_2" src="../img/原始信号+伪迹去除+基线矫正.png" alt="ERROR">
+                        <img id="lab_yuchuli_img_3" src="../img/原始信号+伪迹去除+基线矫正+滤波.png" alt="ERROR">
+                    </span>
+                    <span class="lab_yuchuli_middle">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p id="middle_1">去除伪迹</p>
+                        <p id="middle_2">基线校正</p>
+                        <p id="middle_3">带通滤波</p>
+                        <button onclick="changeimg()" id="lab_yuchuli_buttton">执行</button>
+                    </span>
+                </div>
+
+                <div class="content_lab_tezheng" id="content_lab_tezheng">
+                    <span class="left">
+                        <img src="../img/预处理2.png">
+                        <p>15次的平均响应，每行/列均被点亮过15次，蓝线为目标字符刺激，红线为非目标字符刺激。字符响应 = （平均行响应 + 平均列响应） / 2。</p>
+                    </span>
+                    <span class="right">
+                        <img src="../img/特征提取.png">
+                    </span>
+                </div>
+
+                <div class="content_lab_fenlei" id="content_lab_fenlei">
+                    <img src="../img/分类框图.png" alt="ERROR">
+                </div>
+
+                <div class="content_lab_result" id="content_lab_result">
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;两名受试者的信号（从0.1-60Hz进行带通滤波，并在240Hz进行数字化），每位受试者采集5个session。每个session包含一定数量的runs，每次run受试者将注意力集中在一系列的字符上，对于每次run的每个字符，用户显示：矩阵显示2.5秒，在此期间，每个字符具有相同的亮度（即矩阵为空白）。随后，矩阵中的每一行和每一列随机强化亮度100毫秒（即，产生12种不同的刺激——6行6列）。行/列强化后，矩阵空白75ms。行/列强化按12个区组随机分组。对于每个字符epoch，12组强化重复15次（即，任何特定行/列强化15次，因此每个字符epoch总共有180次强化）。完成一个字符epoch后，有一个2.5秒的周期，在此期间，矩阵是空白的。这段时间通知用户该字符已完成，并将注意力集中在屏幕顶部显示的单词中的下一个字符上。两名受试者A和B各进行一次训练（85个字符）和一次测试（100个字符）。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="exit">
+            <div class="exit_icon">
+                <img src="../img/标题框2.png" width="100%" alt="ERROR">
+                <a href="../index.html">退出登录</a>
+            </div>
+            <div class="exit_icon">
+                <img src="../img/标题框2.png" width="100%" alt="ERROR">
+                <a href="../main.html">返回主页</a>
+            </div>
+        </div>
+    </div>
+<!--            弹出窗口表单-->
+<div class="report" id="report">
+    <div class="report_menu">
+        <button class="report_write" onclick="report_write()">实验报告</button>
+        <button class="report_history" onclick="report_history()">提交记录</button>
+    </div>
+    <div class="report_exit">
+        <button name="report_exit" onclick="report_exit()">×</button>
+    </div>
+    <br>
+    <div id="report_write">
+        <div class="report_title">实验报告</div>
+        <br>
+        <form class="report_form" action="http://localhost:3000/report" method="post">
+            <div class="report_form_box1">
+                <span>姓名</span>
+                <input class="" type="text"  name="name">
+                &nbsp;&nbsp;&nbsp;
+                <span>学号</span>
+                <input class="" type="text"  name="number">
+            </div>
+            <div class="report_form_box1">
+                <label for="nit">学院</label>
+                <select  id="nit" name="xueyuan">
+                    <option name="zy">卓越学院</option>
+                    <option name="jsj">计算机学院</option>
+                    <option name="zdh">自动化学院</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="spe">专业</label>
+                <select  id="spe" name="zhuanye">
+                    <option name="zk">智能科学与技术</option>
+                    <option name="jsj">计算机科学与技术</option>
+                    <option name="jx">机械设计及其自动化</option>
+                </select>
+            </div>
+
+            <div class="report_form_box2">
+                <span>一、实验题目</span>
+                <br>
+                <textarea rows="10" cols="100%" name="title"></textarea>
+            </div>
+            <div class="report_form_box2">
+                <span>二、实验内容</span>
+                <br>
+                <textarea rows="10" cols="100%" name="content"></textarea>
+            </div>
+            <div class="report_form_box2">
+                <span>三、实验结果</span>
+                <br>
+                <textarea rows="10" cols="100%" name="result"></textarea>
+            </div>
+            <br>
+            <div class="report_form_box3">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;附件（选）</span>
+                <input class="" type="file"  name="document">
+            </div>
+            <br>
+            <div class="report_form_box4">
+                <input type="submit" value="提交报告">
+            </div>
+        </form>
+    </div>
+
+    <div id="report_history">
+        <br>
+        <table class="report_history_table">
+            <thead class="report_history_title">
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>学号</th>
+                <th>学院</th>
+                <th>专业</th>
+            </tr>
+            </thead>
+           <tbody id="report_history_data">
+
+           </tbody>
+        </table>
+    </div>
+
+    <br>
+
+</div>
+
+</body>
+</html>

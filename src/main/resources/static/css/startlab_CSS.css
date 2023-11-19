@@ -1,0 +1,308 @@
+.background2
+{
+
+    /*opacity:0.8;*/
+    width: 80%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.exit
+{
+    position: absolute;
+    top:0;
+    right: 0;
+}
+.exit_icon
+{
+    /*position: relative;*/
+    /*top:0;*/
+    /*margin-right: 50px;*/
+    /*margin-left: 200px;*/
+    /*margin-top: 0px;*/
+    float: right;
+    width: 200px;
+}
+.exit_icon a{
+    /*position: relative;*/
+    float: right;
+    z-index:2;
+    text-decoration: none;
+    width: 160px;
+    /*margin-top: 0;*/
+    /*margin-bottom: 0;*/
+    /*left: 50%;*/
+    /*top:50%;*/
+    transform: translate(0,-200%);
+    color: whitesmoke;
+    /*text-align: center;*/
+    font-family: 幼圆;
+    font-size: 24px;
+    font-weight: bolder;
+}
+.exit_icon a:hover{
+    cursor:pointer;
+}
+.subheading
+{
+    position: absolute;
+    top:10%;
+    left: 4%;
+}
+.subheading_icon
+{
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 200px;
+}
+.subheading_icon button{
+    position: absolute;
+    z-index:2;
+    background: rgba(150, 200, 250, 0.5);
+    width: 160px;
+    margin-top: 0;
+    margin-bottom: 0;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    color: whitesmoke;
+    text-align: center;
+    font-family: 幼圆;
+    font-size: 22px;
+    font-weight: bold;
+}
+.subheading_icon button{
+    cursor:pointer;
+}
+/**/
+.content
+{
+    width: 80%;
+    height: 108%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+.content_title
+{
+    width: 100%;
+    top:0;
+    height: 10%;
+}
+.content_title h1
+{
+    padding-left: 40px;
+}
+.content_detail
+{
+    width: 100%;
+    top: 10%;
+    height: 90%;
+    background-color: white;
+}
+/*左右span平分*/
+.left
+{
+    width: 50%;
+    float: left;
+}
+.right
+{
+    width: 50%;
+    float: right;
+}
+.content_detail div
+{
+    display: none;
+    padding: 40px;
+}
+.content_detail p
+{
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+/*实验范式*/
+.content_lab_fanshi img
+{
+    width: 50%;
+    display: table-cell;
+    margin: 0 auto;
+}
+.content_lab_fanshi video
+{
+    width: 95%;
+    height:500px;
+}
+/*信号采集*/
+
+.content_lab_xinhao iframe
+{
+    width: 100%;
+    height: 700px;
+}
+/*预处理*/
+.content_lab_yuchuli img
+{
+    width: 100%;
+    display: table-cell;
+    margin: 0 auto;
+}
+.content_lab_yuchuli p
+{
+    text-align: center;
+}
+.lab_yuchuli_left
+{
+    float: left;
+    width: 45%;
+
+}
+.lab_yuchuli_middle
+{
+    float: left;
+}
+.lab_yuchuli_right
+{
+    float: right;
+    width: 45%;
+}
+.lab_yuchuli_right img
+{
+    display: none;
+}
+.lab_yuchuli_middle p
+{
+    font-size: 20px;
+    margin-top: 40px;
+    border: medium double rgb(50, 130, 200);
+    background-color:rgb(230, 230, 230);
+
+}
+.lab_yuchuli_middle button
+{
+    margin-top: 60px;
+    left:50%;
+    font-size: 20px;
+    transform: translate(50%);
+}
+
+
+/*特征提取*/
+.content_lab_tezheng img
+{
+    width: 90%;
+    display: table-cell;
+    margin: 0 auto;
+}
+/*特征分类*/
+.content_lab_fenlei img
+{
+    width: 90%;
+    display: table-cell;
+    margin: 0 auto;
+}
+.content_lab_fenlei p
+{
+    text-align: center;
+    font-size: 20px;
+}
+/*实验结果*/
+
+/**/
+.report
+{
+    position: absolute;
+    display: none;
+    OVERFLOW: auto;
+    top:15%;
+    left: 30%;
+    border-radius: 10px;
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    width: 900px;
+    height: 600px;
+    background: #FCFCFC;
+}
+.report_menu
+{
+    float: left;
+}
+.report_menu button
+{
+    border: none;
+    color: black;
+    font-family: 幼圆;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    background-color: rgb(100,200,250,0.3);
+    border-radius:3px;
+}
+.report_exit
+{
+    float:right;
+
+}
+.report_exit button
+{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border: none;
+}
+.report_title
+{
+    clear:both;
+    font-family: "Adobe 黑体 Std R";
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+}
+.report_form_box1
+{
+    font-family: "Adobe 仿宋 Std R";
+    font-size: 16px;
+    text-align: center;
+
+}
+.report_form_box2
+{
+    font-family:"Adobe 仿宋 Std R";
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.report_form_box4
+{
+    text-align: center;
+}
+.report_form_box4 input
+{
+    font-size:20px ;
+    font-weight: bold;
+}
+
+.report_history_table
+{
+    /*position: absolute;*/
+    /*left: 50%;*/
+    /*top:0;*/
+    /*transform: translate(-50%,0);*/
+}
+.report_history_table thead
+{
+    font-family: "Adobe 宋体 Std L";
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+
+
+
+

@@ -1,0 +1,69 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/bcilab?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root #本地root   服务器zzzz
+    password: 162331
+#    allowPublicKeyRetrieval: true
+
+  #邮箱基本配置
+  mail:
+    #配置smtp服务主机地址
+    host: smtp.163.com
+    #发送者邮箱
+    username: hdu_bcilab_send@163.com
+    #配置密码,注意不是真正的密码，而是刚刚申请到的授权码
+    password: COBEZACMLVFEBKXA
+    #端口号465或587
+    port: 465
+    #默认的邮件编码为UTF-8
+    default-encoding: UTF-8
+    #其他参数
+    properties:
+      mail:
+        #配置SSL 加密工厂
+        smtp:
+          ssl:
+            #本地测试，先放开ssl
+            enable: true
+            required: false
+          #开启debug模式，这样邮件发送过程的日志会在控制台打印出来，方便排查错误
+        debug: true
+
+    #配置redis
+  redis:
+#    本地：
+    host: 192.168.200.129
+#    服务器
+#    host: 127.0.0.1
+    port: 6379
+    database: 0
+    password: 162331
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 100
+        max-wait: 1000
+        max-idle: 5
+        min-idle: 0
+
+#  session:
+#    store-type: redis
+
+
+  #  thymeleaf:
+#    cache: false
+
+    #    整合mybatis
+mybatis:
+  type-aliases-package: com.example.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+
+server:
+  port: 8082
+
+#servlet:
+#  context-path: /api
+
+

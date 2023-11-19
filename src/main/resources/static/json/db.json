@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "name": "test",
+      "password": "123456",
+      "telephone": "18751231231",
+      "e-mail": "abc123123@qq.com",
+      "id": 1
+    },
+    {
+      "name": "13579",
+      "password": "13579",
+      "telephone": "13579135791",
+      "e-mail": "13579@qq.com",
+      "id": 2
+    },
+    {
+      "name": "2468",
+      "password": "2468",
+      "telephone": "24682468246",
+      "e-mail": "2468@qq.com",
+      "id": 3
+    },
+    {
+      "name": "NJNJ",
+      "password": "123456",
+      "telephone": "123456789",
+      "e-mail": "123456789",
+      "id": 4
+    }
+  ],
+  "report": [
+    {
+      "name": "张三",
+      "number": "12345678",
+      "xueyuan": "计算机学院",
+      "zhuanye": "计算机科学与技术",
+      "title": "XXXX",
+      "content": "XXXX",
+      "result": "XXXX",
+      "document": "",
+      "id": 1
+    },
+    {
+      "name": "李四",
+      "number": "22345678",
+      "xueyuan": "自动化学院",
+      "zhuanye": "智能科学与技术",
+      "title": "XXXX",
+      "content": "XXXX",
+      "result": "XXXX",
+      "document": "",
+      "id": 2
+    },
+    {
+      "name": "王五",
+      "number": "32345678",
+      "xueyuan": "计算机学院",
+      "zhuanye": "计算机科学与技术",
+      "title": "XXXX",
+      "content": "XXXX",
+      "result": "XXXX",
+      "document": "",
+      "id": 3
+    }
+  ]
+}

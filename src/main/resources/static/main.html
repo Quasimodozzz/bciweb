@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" type="text/css" href="../css/main_CSS.css">
+    <script src="../js/PDF/pdf.js"></script>
+    <script src="../js/PDF/pdf.worker.js"></script>
+    <script src="../js/PDF/pdfobject.js"></script>
+</head>
+<body>
+<script src="../js/main_js.js"></script>
+    <div class="home">
+        <img class="background" src="../img/首页背景2.jfif" width="100%" alt="ERROR">
+        <div class="exit_icon">
+            <img src="../img/标题框2.png" width="100%" alt="ERROR">
+            <a href="index.html">退出登录</a>
+        </div>
+        <div class="subheading">
+            <div class="subheading_icon">
+                <img src="../img/标题框1.png" width="100%" alt="ERROR">
+                <button class="lab_introduction"  onclick="lab_int()">实验简介</button>
+            </div>
+            <div class="subheading_icon">
+                <img src="../img/标题框1.png" width="100%" alt="ERROR">
+                <button class="lab_principle" onclick="lab_pri()">实验原理</button>
+            </div>
+            <div class="subheading_icon">
+                <img src="../img/标题框1.png" width="100%" alt="ERROR">
+                <button class="lab_content" onclick="lab_con()">实验内容</button>
+            </div>
+            <div class="subheading_icon">
+                <img src="../img/标题框1.png" width="100%" alt="ERROR">
+                <button class="lab_guide" onclick="lab_gui()">实验指导</button>
+            </div>
+        </div>
+        <div class="text_icon">
+            <img src="../img/文档底框.png" alt="EEROR">
+            <div class="text_icon_inner" id="text_icon_inner">
+                <div class="text_icon_introduction" id="text_icon_introduction">
+                    <h2>>>实验简介</h2>
+                    <br>
+                    <hr>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>脑机接口</span>是机器学习与脑科学、认知科学、生物医学工程等多学科交叉融合的智能系统，同时又是人工智能领域的一个前沿热点方向。以脑机接口这一典型脑机融合智能系统为实验对象，可以提高学生的学习兴趣，使学生通过实验认识到机器学习方法在实际应用中的意义与问题，促进理论学习的深化与实践创新能力的提升。
+                    </p>
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但是，利用实体脑机接口系统开展实验教学存在着实验环境要求高、设备操作难度大、实验耗时长、数据处理过程难以观察等局限性，难以有效开展。本项目通过EEG信号的虚拟采集、数据处理变换可视化、参数化实验等方法，设计脑机接口虚拟仿真教学实验系统，可以有效克服这些局限，引领学生进入人工智能前沿的个性化学习。
+                    </p>
+                    <hr>
+                </div>
+                <div class="text_icon_principle" id="text_icon_principle">
+                    <h2>>>实验原理</h2>
+                    <hr>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>脑机接口</span>系统是通过采集特定实验范式下的EEG、ECoG等脑成像信号， 对信号进行处理与识别产生反映受试者意图的指令，直接建立起大脑与计算机或其它设备直接的通讯通道，而不依赖人体的肌肉骨骼系统。 典型的脑机接口系统组成如图1所示，主要由信号采集、信号预处理、特征提取、分类决策和对象控制几部分组成， 其中信号预处理、特征提取、分类决策通常采用机器学习方法，需要分成分类器的学习与训练两个阶段.
+                    </p>
+                    <img src="../img/系统框架.png" alt="ERROR">
+                    <h5>图1&nbsp;脑机接口虚拟仿真实验系统框架</h5>
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根据大脑活动信号的获取方式，BCI系统分为侵入式(Invasive)和非侵入式(Non-Invasive)两类。 侵入式BCI系统在大脑皮质表面放置电极阵列记录脑皮层电图(Electrocorticography, ECoG)信号， 虽然有很高的信号信噪比，但是存在植入风险和信号获取长期鲁棒性的问题。 非侵入式BCI系统采用的信号包括脑电图(Electroencephalography, EEG)、功能性磁共振成像(Functional Magnetic Resonance，fMRI)、脑磁图(Magnetoencephalography, MEG)和功能近红外光谱(Functional Near-Infrared Spectroscopy，fNIRS)等。其中的EEG信号具有时间分辨率高、设备低成本、采集便捷等优点，成为脑机接口中普遍使用的一种信号源。
+                    </p>
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BCI系统中采用的EEG，可以分为使用外源性诱发信号和内源性自发信号两大类。诱发EEG是人为地对感觉器官施加刺激所引起的脑电位变化，主要有视觉诱发电位(Steady-State Visual Evoked Potential，SSVEP)和P300诱发电位(P300 Evoked Potentials)。诱发EEG具有特征稳定、受主观因素影响小的特点，但依赖外界的同步刺激、需要结构化的环境。自发EEG则是自然状态下受试者自我调节产生的EEG信号，主要有自主控制皮层慢电位(Slow Cortical Potential，SCP)、运动想象事件相关去同步/同步化(Event Related Desynchronization/ Synchronization，ERD/ERS)以及不同思维作业的电位等类型。自发EEG由受试者自主产生，相对诱发EEG来说是更为自然和灵活的方式，但易受各种生理和心理因素影响产生不一致性，需要进行训练。
+                    </p>
+                    <hr>
+                    <br>
+                </div>
+                <div class="text_icon_content" id="text_icon_content">
+                    <h2>>>实验内容</h2>
+                    <hr>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将脑电图(Electroencephalography, EEG)信号转换为控制指令是脑机接口（Brain Computer Interface，BCI）系统中最核心的部分，也就是对EEG信号的特征提取和意图模式分类。BCI系统根据信号采集的范式不同，有P300诱发电位(P300 Evoked Potentials)、视觉诱发电位(Steady-State Visual Evoked Potential，SSVEP)和运动想象事件相关去同步/同步化(Event Related Desynchronization/ Synchronization，ERD/ERS)等类型。<span>本实验提供了以上三种范式的脑机接口实验，请选择进入实验。</span></p>
+                    <hr>
+                    <div>
+                        <p class="text_icon_content_title">实验一：P300脑机接口</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P300是较早发现的内源性事件相关电位成分，是当视觉受到外界特殊刺激时脑电信号出现的一个波峰，其峰值大约出现在相关事件发生后的300ms。通常由包含靶刺激的小概率事件和非靶刺激的大概率事件的oddball范式刺激序列诱发。
+
+                        </p>
+                        <a class="text_icon_content_jump" onclick="lab_sta()">->开始实验</a>
+                    </div>
+                    <br>
+                    <hr>
+                    <div>
+                        <p class="text_icon_content_title">实验二：运动想象脑机接口</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;运动想象(Motor Imagery, MI)是对动作行为的内心排演，并不伴随肌肉和肢体的实际活动。单边肢体运动想象，如想象手部、脚部的动作，肢体对侧皮层运动区域产生事件相关去同步ERD现象，同侧皮层运动区域产生事件相关同步ERS现象。
+
+                        </p>
+                        <a class="text_icon_content_jump" >->开始实验</a>
+                    </div>
+                    <br>
+                    <hr>
+                    <div>
+                        <p class="text_icon_content_title">实验三：SSVEP脑机接口</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;稳态视觉诱发电位(Steady-stateVisual Evoked Potentials, SSVEP)属于视觉诱发电位(Visual Evoked Potentials, VEP)，是指当人眼受到一个恒定频率（通常大于4Hz）的视觉刺激时，大脑视觉皮层会自动产生与刺激频率及其谐波频率同频率的响应。
+
+                        </p>
+                        <a class="text_icon_content_jump" >->开始实验</a>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                </div>
+                <div class="text_icon_guide" id="text_icon_guide">
+                    <h2>>>实验指导</h2>
+                    <hr>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;脑机接口人工智能虚拟仿真实验过程共分成七个环节，在每个环节中包含若干交互性操作步骤，具体如下。</p>
+
+                    <p class="text_icon_guide_title">环节一：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在选择“开始实验”后，首先进入<span>“实验数据采集”</span>“实验数据采集”环节。在“实验预习”模块中了解EEG数据采集设备操作方法与实验数据采集步骤，完成测试后，进入EEG采集实验室虚拟场景进行数据采集实验。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤1：</span>选择实验范式并设置类别类型、实验组数、采集次数等实验参数；</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤2：</span>连接电极帽、放大器等数据采集设备至计算机，打开设备并设置通道选择、参考电极、采样频率等相关采集参数；</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤3：</span>给受试者佩戴电极帽，检测调整电极阻抗；</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤4：</span>按实验范式设计进行数据采集，观察采集的信号；</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤5：</span>完成一组数据采集后，退出采集实验室虚拟场景。进入“实验数据整理”模块，按照设置实验组数，由系统生成同样实验步骤对应的实验数据，按系统规定格式整理生成EEG数据集。</p>
+
+                    <p class="text_icon_guide_title">环节二：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进入<span>“数据预处理”</span>环节，在“实验预习”模块中学习数据预处理方法与操作方法并完成测试，进入数据预处理可视化交互界面。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤6：</span>选取一次实验的EEG数据，显示原始数据及其频谱。然后选择滤波、陷波、基线分析等功能，设置滤波起止频率等相关参数完成操作，显示并比较操作结果，确定预处理方案；</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤7：</span>利用上一步骤确定的预处理方案对数据集中全部数据进行批量预处理操作。</p>
+
+                    <p class="text_icon_guide_title">环节三：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进入<span>“特征提取”</span>环节，在“实验预习”模块中学习特征提取知识与操作方法并完成测试，进入特征提取可视化交互界面。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤8：</span>选取前一步骤中预处理后的一组EEG数据，选择一个或多个提取特征类型，设置相关参数进行特征提取操作，显示并比较操作结果，确定特征提取方案；</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤9：</span>对全部预处理后的数据进行批量特征提取操作。</p>
+
+                    <p class="text_icon_guide_title">环节四：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进入<span>“特征选择”</span>环节，在“实验预习”模块中学习特征选择知识与操作方法并完成测试，进入特征选择可视化交互界面。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤10：</span>选取一组特征数据，选择特征选择方法，设置相关参数进行特征。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤11：</span>对全部特征数据进行批量特征选择操作。</p>
+
+                    <p class="text_icon_guide_title">环节五：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进入<span>“分类决策”</span>环节，在“实验预习”模块中学习分类决策知识与操作方法并完成测试，进入特征选择可视化交互界面。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤12：</span>将数据集中的特征数据划分为训练集和测试集；</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤13：</span>选择一种分类方法，设置相关参数，利用训练集数据进行分类器训练操作；</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤14：</span>选择分类器性能评价指标，利用测试集数据进行分类器性能测试，显示性能分析结果；</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤15：</span>重复步骤13、14比较和改进分类器。</p>
+
+                    <p class="text_icon_guide_title">环节六：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进入<span>“对象控制”</span>环节，在“实验预习”模块中了解对象控制操作方法，完成测试后，进入对象控制虚拟场景进行实验。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>步骤16：</span>选取一个与实验范式匹配的控制任务，按任务要求选择数据集中对应任务类别的EEG数据，运行虚拟脑机接口系统，顺序输入选择的EEG数据，系统根据分类决策的控制指令控制对象完成任务，观察记录对象控制运行结果，并把运行结果与设计任务进行比较评价。</p>
+
+                    <p class="text_icon_guide_title">环节七：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进入<span>“实验报告”</span>环节，整理分析实验运行结果；根据实验报告撰写要求，撰写实验报告并提交；查看实验成绩。</p>
+                    <hr>
+                    <br>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

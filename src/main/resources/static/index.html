@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>脑机接口虚拟仿真实验</title>
+<!--    <meta http-equiv="Access-Control-Allow-Origin" content="http://121.196.234.186/json/db.json">-->
+    <link rel="stylesheet" type="text/css" href="css/index_CSS.css">
+    <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+    <script src="js/login.js"></script>
+    <div id='div'></div>
+
+
+</head>
+<body>
+
+
+    <div class="home">
+        <img class="background" src="img/首页背景2.jfif" width="100%" alt="ERROR">
+        <div class="login">
+            <span class="login_title1">《机器学习》</span>
+            <span class="login_title2">脑机接口虚拟仿真实验</span>
+            <span class="login_login">欢迎登陆</span>
+<!-- 登录框-->
+            <form class="login_form" name="login_form" >
+                <div class="login_form_box">
+                    <img src="img/图标-用户.png" width=25px alt="ERROR">
+                    <input class="login_form_box_" type="text" placeholder="姓名" id="login_name" name="login_name">
+                </div>
+                <div class="login_form_box">
+                    <img src="img/图标-安全隐私.png" width=25px alt="ERROR">
+                    <input class="login_form_box_" type="password" placeholder="密码" id="login_password" name="login_password">
+                </div>
+                <div class="login_form_login">
+                    <input  type="button" value="登录" name="login" onclick="log()">
+                </div>
+                <div class="view">
+<!--                    <input class="view" type="text" placeholder="" id="view_count" name="view_count">-->
+                    <script>
+                        function view(){
+                            //利用Ajax请求数据，获取数据。
+                            $.ajax({
+                                type: "post",//请求的类型
+                                url: "/view", //请求的后端处理路径
+                                success: function (results) {
+                                    //遍历返回的数据数组，分别对应写入博文框
+                                    document.write(results);//1、页面上显示a的值“123”
+                                    document.getElementById('div').innerHTML = results;//2、在div节点上显示
+                                }
+                            })
+                        }
+
+                    </script>
+                </div>
+
+
+            </form>
+<!--注册、忘记密码页面跳转-->
+            <div class="login_jump">
+                <a class="login_jump_enroll" href="enroll.html">首次注册</a>
+                <a class="login_jump_forget" href="forget.html">忘记密码？</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>
